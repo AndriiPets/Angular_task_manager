@@ -1,0 +1,16 @@
+
+
+<div 
+[ngClass]="{reminder: task.reminder}" 
+class="task"
+(dblclick)="onToggle(task)"
+>
+    <h3>{{task.text}} <fa-icon 
+        (click)="onDelete(task)"
+        [ngStyle]="{'color': 'red'}" 
+        [icon]="fontTimes"></fa-icon></h3>
+    <p>{{task.day}} <app-icon-button icon="{{showEditTask[0] && showEditTask[1] === task.id ?'save':'edit'}}" 
+        color="blue" 
+        (iconClick)="toggleEdit()"></app-icon-button></p>
+</div>
+<app-edit-task [task]="task" (onEditTask)="onEdit($event)"></app-edit-task>

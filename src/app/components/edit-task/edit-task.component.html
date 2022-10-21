@@ -1,0 +1,16 @@
+
+
+<form class="edit-form" *ngIf="showEditTask[0] && showEditTask[1] === task.id" (ngSubmit)="onEdit(task)">
+    <div class="form-control">
+        <label for="text">Task description</label>
+        <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="{{task.text}}"/>
+    </div>
+    <div class="form-control">
+        <label for="text">Day & Time</label>
+        <input type="text" name="day" [(ngModel)]="day" id="day" placeholder="{{task.day}}"/>
+    </div>
+    <input type="submit" class="btn btn-block" value="Edit Task" />
+
+
+
+</form>
